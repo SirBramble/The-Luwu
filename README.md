@@ -16,6 +16,10 @@ To accomplish these features, it needs a 5V supply to drive the logic and option
 
 TBD
 
+## Schematic
+
+The Schematic can be found here: [The Luwu PCB/print/The Luwu PCB.pdf](https://github.com/SirBramble/The-Luwu/blob/f4439437ab35bf7dc6665ce1337c5cff792b409b/The%20Luwu%20PCB/print/The%20Luwu%20PCB.pdf)
+
 ## Pictures
 
 ![ ](https://github.com/SirBramble/The-Luwu/blob/main/The%20Luwu%20PCB/pictures/The%20Luwu%20PCB%20TOP.png?raw=true)
