@@ -8,7 +8,7 @@ My 3D Printer has a standard RGB LED Strip installed in its enclosure. This Boar
 
 ## Features
 
-The Board uses a ESP32C3 to interface with Home Assistant. The ESP controls 3 RGB channels that are each capable of (in theory) driving 10A. These channels can also be mapped to control addressable RGB Strips, although this can only be done for all channels at once. There is also one dedicated addressable RGB Strip Port, that can be used at any time.
+The Board uses a ESP32C3 to interface with Home Assistant. The ESP controls 3 RGB channels that are each capable of (in theory) driving 10A. These channels can also be mapped to control addressable RGB Strips, although this can only be done for all channels at once and **ONLY** if the level shifter logic voltage is set to 5V. There is also one dedicated addressable RGB Strip Port, that can be used at any time.
 
 To accomplish these features, it needs a 5V supply to drive the logic and optionally the addressable LED Strips and a 12V supply to drive the non addressable Strip. To accomplish this in a 3D Printer environment a Voltage converter for the 24V Power Supply is needed. For this [the Supluwu](https://github.com/SirBramble/The-Supluwu) could be used.
 
