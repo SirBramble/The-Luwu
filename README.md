@@ -22,8 +22,8 @@ The Schematic can be found here: [The Luwu PCB/print/The Luwu PCB.pdf](https://g
 
 ## Pictures
 
-![ ](https://github.com/SirBramble/The-Luwu/blob/main/The%20Luwu%20PCB/pictures/The%20Luwu%20PCB%20TOP.png?raw=true)
+![ ](https://github.com/SirBramble/The-Luwu/blob/595da0b069d216a6ebaaa53a5030eae053b21326/The%20Luwu%20PCB/pictures/The%20Luwu%20PCB%20TOP.png?raw=true)
 
-![ ](https://github.com/SirBramble/The-Luwu/blob/main/The%20Luwu%20PCB/pictures/The%20Luwu%20PCB%20SIDE.png?raw=true)
+![ ](https://github.com/SirBramble/The-Luwu/blob/595da0b069d216a6ebaaa53a5030eae053b21326/The%20Luwu%20PCB/pictures/The%20Luwu%20PCB%20SIDE.png?raw=true)
 
-![ ](https://github.com/SirBramble/The-Luwu/blob/main/The%20Luwu%20PCB/pictures/The%20Luwu%20PCB%20CLOSE.png?raw=true)
+![ ](https://github.com/SirBramble/The-Luwu/blob/595da0b069d216a6ebaaa53a5030eae053b21326/The%20Luwu%20PCB/pictures/The%20Luwu%20PCB%20CLOSE.png?raw=true)
