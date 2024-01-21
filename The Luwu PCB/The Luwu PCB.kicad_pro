@@ -74,7 +74,8 @@
         "hole_clearance|98306000|64170400|7e9dc2ad-573f-4b39-b2a8-03ecd83291cb|d9b43743-482a-447f-895c-0f5be6c308bc",
         "hole_clearance|98306000|64170400|b5905f96-2d18-4675-9f78-fa9249ef9d42|7e9dc2ad-573f-4b39-b2a8-03ecd83291cb",
         "hole_clearance|98306000|64170400|d9b43743-482a-447f-895c-0f5be6c308bc|7e9dc2ad-573f-4b39-b2a8-03ecd83291cb",
-        "lib_footprint_mismatch|101862250|61270399|96e2ee9e-cbbf-4cc1-811d-5ed37403e873|00000000-0000-0000-0000-000000000000"
+        "lib_footprint_mismatch|101862250|61270399|96e2ee9e-cbbf-4cc1-811d-5ed37403e873|00000000-0000-0000-0000-000000000000",
+        "silk_overlap|67118243|134069587|6dc34ef4-6633-4edb-ab6d-d045bce9f0e3|db1c25a1-b20b-4831-b8a9-e3dc5d2c11a9"
       ],
       "meta": {
         "version": 2
@@ -145,7 +146,7 @@
         "min_through_hole_diameter": 0.19999999999999998,
         "min_track_width": 0.0,
         "min_via_annular_width": 0.049999999999999996,
-        "min_via_diameter": 0.39999999999999997,
+        "min_via_diameter": 0.44999999999999996,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
         "solder_mask_to_copper_clearance": 0.005,
