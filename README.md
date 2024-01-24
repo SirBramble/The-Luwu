@@ -14,7 +14,154 @@ To accomplish these features, it needs a 5V supply to drive the logic and option
 
 ## Integration in to Home Assistant
 
-TBD
+ESP Home Config:
+
+```yaml
+esphome:
+  name: NAME
+  friendly_name: FRIENDLY_NAME
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+  level: DEBUG
+# Enable Home Assistant API
+api:
+  encryption:
+    key: ""     #let this auto generate or set it yourself
+
+ota:
+  password: ""  #let this auto generate or set it yourself
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "FALLBACK_HOTSPOT_NAME"
+    password: "SUPER_SECURE_PASSWORD123"
+
+light:
+  - platform: rgb
+    id: oldstyle_rgb
+    name: "Oldstyle RGB"
+    red: gpio_red
+    green: gpio_green
+    blue: gpio_blue
+    effects:
+      - lambda:
+          name: Rainbow
+          update_interval: 5s
+          lambda: |-
+            static int state = 0;
+            auto call = id(oldstyle_rgb).turn_on();
+            call.set_transition_length(4000);
+            if (state == 0) {
+              call.set_rgb(1.0, 0.0, 0.0);
+            } else if (state == 1) {
+              call.set_rgb(1.0, 0.5, 0.0);
+            } else if (state == 2) {
+              call.set_rgb(1.0, 1.0, 0.0);
+            } else if (state == 3) {
+              call.set_rgb(0.5, 1.0, 0.0);
+            } else if (state == 4) {
+              call.set_rgb(0.0, 1.0, 0.0);
+            } else if (state == 5) {
+              call.set_rgb(0.0, 1.0, 0.5);
+            } else if (state == 6) {
+              call.set_rgb(0.0, 1.0, 1.0);
+            } else if (state == 7) {
+              call.set_rgb(0.0, 0.5, 1.0);
+            } else if (state == 8) {
+              call.set_rgb(0.0, 0.0, 1.0);
+            } else if (state == 9) {
+              call.set_rgb(0.5, 0.0, 1.0);
+            } else if (state == 10) {
+              call.set_rgb(1.0, 0.0, 1.0);
+            } else if (state == 11) {
+              call.set_rgb(1.0, 0.0, 0.5);
+            }
+            call.perform();
+            state++;
+            if (state == 12)
+              state = 0;
+      - lambda:
+            name: Fast Rainbow
+            update_interval: 1s
+            lambda: |-
+              static int state = 0;
+              auto call = id(oldstyle_rgb).turn_on();
+              call.set_transition_length(1000);
+              if (state == 0) {
+                call.set_rgb(1.0, 0.0, 0.0);
+              } else if (state == 1) {
+                call.set_rgb(1.0, 0.5, 0.0);
+              } else if (state == 2) {
+                call.set_rgb(1.0, 1.0, 0.0);
+              } else if (state == 3) {
+                call.set_rgb(0.5, 1.0, 0.0);
+              } else if (state == 4) {
+                call.set_rgb(0.0, 1.0, 0.0);
+              } else if (state == 5) {
+                call.set_rgb(0.0, 1.0, 0.5);
+              } else if (state == 6) {
+                call.set_rgb(0.0, 1.0, 1.0);
+              } else if (state == 7) {
+                call.set_rgb(0.0, 0.5, 1.0);
+              } else if (state == 8) {
+                call.set_rgb(0.0, 0.0, 1.0);
+              } else if (state == 9) {
+                call.set_rgb(0.5, 0.0, 1.0);
+              } else if (state == 10) {
+                call.set_rgb(1.0, 0.0, 1.0);
+              } else if (state == 11) {
+                call.set_rgb(1.0, 0.0, 0.5);
+              }
+              call.perform();
+              state++;
+              if (state == 12)
+                state = 0;
+
+
+# Example output entry (default)
+output:
+  - platform: ledc
+    id: gpio_red
+    pin: GPIO6
+  - platform: ledc
+    id: gpio_green
+    pin: GPIO7
+  - platform: ledc
+    id: gpio_blue
+    pin: GPIO10
+
+#uncomment to enable
+# Example output entry (modified)
+#output:
+#  - platform: ledc
+#    id: gpio_red
+#    pin: GPIO7
+#  - platform: ledc
+#    id: gpio_green
+#    pin: GPIO10
+#  - platform: ledc
+#    id: gpio_blue
+#    pin: GPIO6
+
+captive_portal:
+    
+```
+
+### Flashing firmware
+
+I had some issues when flashing the Firmware.
+
+This helped: [https://github.com/espressif/esp-idf/issues/9005](https://github.com/espressif/esp-idf/issues/9005)
 
 ## Schematic
 
